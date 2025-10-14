@@ -119,15 +119,6 @@ export const LoginForm: React.FC = () => {
                 )}
               </Button>
             </form>
-
-            <div className="mt-6 text-center">
-              <p className="text-sm text-slate-600">
-                Don't have an account?{' '}
-                <span className="font-semibold text-slate-900 cursor-pointer hover:text-primary transition-colors">
-                  Sign up for free.
-                </span>
-              </p>
-            </div>
           </CardContent>
         </Card>
       </div>

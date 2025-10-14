@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { PlusIcon } from '@/components/icons'
 import { SidebarHistory } from '@/components/sidebar-history'
@@ -33,9 +34,15 @@ export function AppSidebar() {
                   setOpenMobile(false)
                 }}
               >
-                <span className="cursor-pointer rounded-md px-2 font-semibold text-lg hover:bg-muted">
-                  Chatbot
-                </span>
+                <div className="cursor-pointer rounded-md px-2 py-1 hover:bg-muted transition-colors">
+                  <Image
+                    src="/images/aixccelerate-logo (2).svg"
+                    alt="AIXccelerate Logo"
+                    width={120}
+                    height={32}
+                    className="h-8 w-auto"
+                  />
+                </div>
               </Link>
               <div className="flex flex-row gap-1">
                 <Tooltip>

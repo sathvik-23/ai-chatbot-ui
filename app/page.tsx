@@ -9,6 +9,7 @@ import { DEFAULT_CHAT_MODEL } from '@/lib/ai/models'
 import { generateUUID } from '@/lib/utils'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { useAuth } from '@/contexts/AuthContext'
+import Image from 'next/image'
 
 export default function Home() {
   const { isAuthenticated, isLoading } = useAuth()
@@ -42,7 +43,15 @@ export default function Home() {
             <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
               <div className="flex h-14 items-center justify-between px-4">
                 <div className="flex items-center space-x-3">
-
+                  <div className="relative">
+                    <Image
+                      src="/images/lucy-avatar.png.png"
+                      alt="Agent Lucy"
+                      width={32}
+                      height={32}
+                      className="rounded-full ring-2 ring-primary/20"
+                    />
+                  </div>
                   <h1 className="text-lg font-semibold">Agent Lucy</h1>
                 </div>
               </div>
