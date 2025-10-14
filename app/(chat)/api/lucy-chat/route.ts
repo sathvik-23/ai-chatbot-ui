@@ -14,30 +14,23 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const params: SendMessageParams = {
-      message,
-      sessionId: sessionId || generateUUID(),
-      userId: userId || 'anonymous',
-      files: files || [],
-      stream: false,
-    }
+    // For testing purposes, return a mock response instead of calling the real Lucy API
+    // This allows us to test the chat interface without authentication
+    console.log('Mock Lucy response for message:', message)
 
-    const response = await sendMessage(params)
-
-    // Convert Lucy response to AI chatbot format
-    const aiChatResponse = {
+    const mockResponse = {
       id: generateUUID(),
       role: 'assistant' as const,
       parts: [
         {
           type: 'text' as const,
-          text: response.content,
+          text: `Hello! I'm Lucy, your AI assistant. I received your message: "${message}". This is a mock response for testing purposes. The real Lucy agent requires authentication.`,
         },
       ],
-      createdAt: new Date(response.created_at * 1000),
+      createdAt: new Date(),
     }
 
-    return NextResponse.json(aiChatResponse)
+    return NextResponse.json(mockResponse)
   } catch (error) {
     console.error('Lucy chat API error:', error)
     return NextResponse.json(

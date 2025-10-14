@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { PlusIcon } from '@/components/icons'
 import { SidebarHistory } from '@/components/sidebar-history'
-import { UserProfileNav } from '@/components/UserProfileNav'
+import { SidebarProfile } from '@/components/sidebar-profile'
 import { Button } from '@/components/ui/button'
 import {
   Sidebar,
@@ -66,7 +66,7 @@ export function AppSidebar() {
         </SidebarContent>
         <SidebarFooter>
           <div className="p-2">
-            <UserProfileNav />
+            <SidebarProfile />
           </div>
         </SidebarFooter>
       </Sidebar>
