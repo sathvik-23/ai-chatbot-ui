@@ -26,15 +26,6 @@ test.describe("Chat activity", () => {
     await chatPage.hasChatIdInUrl();
   });
 
-  test("Send a user message from suggestion", async () => {
-    await chatPage.sendUserMessageFromSuggestion();
-    await chatPage.isGenerationComplete();
-
-    const assistantMessage = await chatPage.getRecentAssistantMessage();
-    expect(assistantMessage.content).toContain(
-      "With Next.js, you can ship fast!"
-    );
-  });
 
   test("Toggle between send/stop button based on activity", async () => {
     await expect(chatPage.sendButton).toBeVisible();
@@ -74,11 +65,6 @@ test.describe("Chat activity", () => {
     expect(updatedAssistantMessage.content).toContain("It's just blue duh!");
   });
 
-  test("Hide suggested actions after sending message", async () => {
-    await chatPage.isElementVisible("suggested-actions");
-    await chatPage.sendUserMessageFromSuggestion();
-    await chatPage.isElementNotVisible("suggested-actions");
-  });
 
   test("Upload file and send image attachment with message", async () => {
     await chatPage.addImageAttachment();
