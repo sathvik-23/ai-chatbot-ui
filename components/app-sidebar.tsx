@@ -1,10 +1,11 @@
-"use client";
+'use client'
 
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { PlusIcon } from "@/components/icons";
-import { SidebarHistory } from "@/components/sidebar-history";
-import { Button } from "@/components/ui/button";
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { PlusIcon } from '@/components/icons'
+import { SidebarHistory } from '@/components/sidebar-history'
+import { UserProfileNav } from '@/components/UserProfileNav'
+import { Button } from '@/components/ui/button'
 import {
   Sidebar,
   SidebarContent,
@@ -12,12 +13,12 @@ import {
   SidebarHeader,
   SidebarMenu,
   useSidebar,
-} from "@/components/ui/sidebar";
-import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+} from '@/components/ui/sidebar'
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
 
 export function AppSidebar() {
-  const router = useRouter();
-  const { setOpenMobile } = useSidebar();
+  const router = useRouter()
+  const { setOpenMobile } = useSidebar()
 
   return (
     <>
@@ -29,7 +30,7 @@ export function AppSidebar() {
                 className="flex flex-row items-center gap-3"
                 href="/"
                 onClick={() => {
-                  setOpenMobile(false);
+                  setOpenMobile(false)
                 }}
               >
                 <span className="cursor-pointer rounded-md px-2 font-semibold text-lg hover:bg-muted">
@@ -42,9 +43,9 @@ export function AppSidebar() {
                     <Button
                       className="h-8 p-1 md:h-fit md:p-2"
                       onClick={() => {
-                        setOpenMobile(false);
-                        router.push("/");
-                        router.refresh();
+                        setOpenMobile(false)
+                        router.push('/')
+                        router.refresh()
                       }}
                       type="button"
                       variant="ghost"
@@ -63,9 +64,12 @@ export function AppSidebar() {
         <SidebarContent>
           <SidebarHistory />
         </SidebarContent>
-        <SidebarFooter></SidebarFooter>
+        <SidebarFooter>
+          <div className="p-2">
+            <UserProfileNav />
+          </div>
+        </SidebarFooter>
       </Sidebar>
-
     </>
-  );
+  )
 }

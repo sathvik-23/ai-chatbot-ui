@@ -8,7 +8,6 @@ import { AppSidebar } from '@/components/app-sidebar'
 import { DEFAULT_CHAT_MODEL } from '@/lib/ai/models'
 import { generateUUID } from '@/lib/utils'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
-import { UserProfileNav } from '@/components/UserProfileNav'
 import { useAuth } from '@/contexts/AuthContext'
 
 export default function Home() {
@@ -27,7 +26,11 @@ export default function Home() {
   }
 
   if (!isAuthenticated) {
-    return <ProtectedRoute />
+    return (
+      <ProtectedRoute>
+        <div>Loading...</div>
+      </ProtectedRoute>
+    )
   }
 
   return (
@@ -41,7 +44,6 @@ export default function Home() {
                 <div className="flex items-center space-x-2">
                   <h1 className="text-lg font-semibold">Lucy Assistant</h1>
                 </div>
-                <UserProfileNav />
               </div>
             </header>
             <div className="flex-1">
