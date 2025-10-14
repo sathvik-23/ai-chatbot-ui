@@ -12,6 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from './ui/card'
+import Image from 'next/image'
 
 export const LoginForm: React.FC = () => {
   const [email, setEmail] = useState('')
@@ -56,28 +57,44 @@ export const LoginForm: React.FC = () => {
 
   if (step === 'email') {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
-        <Card className="w-full max-w-md">
-          <CardHeader className="text-center">
-            <CardTitle className="text-2xl font-bold">
-              Welcome to Lucy Assistant
-            </CardTitle>
-            <CardDescription>
-              Enter your email address to receive a verification code
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 p-4">
+        <Card className="w-full max-w-md shadow-xl border-0 bg-white/80 backdrop-blur-sm">
+          <CardHeader className="text-center pb-8 pt-8">
+            <div className="flex items-center justify-center space-x-3 mb-4">
+              <div className="relative">
+                <Image
+                  src="/images/lucy-avatar.png.png"
+                  alt="Agent Lucy"
+                  width={48}
+                  height={48}
+                  className="rounded-full ring-2 ring-primary/20"
+                />
+              </div>
+              <CardTitle className="text-3xl font-bold text-slate-900">
+                Agent Lucy
+              </CardTitle>
+            </div>
+            <CardDescription className="text-slate-600 text-base">
+              Use your email and password to sign in
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <form onSubmit={handleEmailSubmit} className="space-y-4">
+          <CardContent className="px-8 pb-8">
+            <form onSubmit={handleEmailSubmit} className="space-y-6">
               <div className="space-y-2">
-                <Label htmlFor="email">Email Address</Label>
+                <Label
+                  htmlFor="email"
+                  className="text-sm font-semibold text-slate-700 uppercase tracking-wider"
+                >
+                  Email Address
+                </Label>
                 <Input
                   id="email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  placeholder="Enter your email address"
-                  className="w-full"
+                  placeholder="user@acme.com"
+                  className="w-full h-12 text-base border-slate-200 focus:border-primary focus:ring-primary/20 rounded-lg"
                 />
               </div>
 
@@ -87,10 +104,14 @@ export const LoginForm: React.FC = () => {
                 </div>
               )}
 
-              <Button type="submit" disabled={isLoading} className="w-full">
+              <Button
+                type="submit"
+                disabled={isLoading}
+                className="w-full h-12 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+              >
                 {isLoading ? (
                   <div className="flex items-center">
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                    <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent mr-2"></div>
                     Sending OTP...
                   </div>
                 ) : (
@@ -98,6 +119,15 @@ export const LoginForm: React.FC = () => {
                 )}
               </Button>
             </form>
+
+            <div className="mt-6 text-center">
+              <p className="text-sm text-slate-600">
+                Don't have an account?{' '}
+                <span className="font-semibold text-slate-900 cursor-pointer hover:text-primary transition-colors">
+                  Sign up for free.
+                </span>
+              </p>
+            </div>
           </CardContent>
         </Card>
       </div>
@@ -105,20 +135,36 @@ export const LoginForm: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-bold">
-            Verify Your Email
-          </CardTitle>
-          <CardDescription>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 p-4">
+      <Card className="w-full max-w-md shadow-xl border-0 bg-white/80 backdrop-blur-sm">
+        <CardHeader className="text-center pb-8 pt-8">
+          <div className="flex items-center justify-center space-x-3 mb-4">
+            <div className="relative">
+              <Image
+                src="/images/lucy-avatar.png.png"
+                alt="Agent Lucy"
+                width={48}
+                height={48}
+                className="rounded-full ring-2 ring-primary/20"
+              />
+            </div>
+            <CardTitle className="text-3xl font-bold text-slate-900">
+              Agent Lucy
+            </CardTitle>
+          </div>
+          <CardDescription className="text-slate-600 text-base">
             Enter the 6-digit code sent to {email}
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <form onSubmit={handleOTPSubmit} className="space-y-4">
+        <CardContent className="px-8 pb-8">
+          <form onSubmit={handleOTPSubmit} className="space-y-6">
             <div className="space-y-2">
-              <Label htmlFor="otp">Verification Code</Label>
+              <Label
+                htmlFor="otp"
+                className="text-sm font-semibold text-slate-700 uppercase tracking-wider"
+              >
+                Verification Code
+              </Label>
               <Input
                 id="otp"
                 type="text"
@@ -127,9 +173,9 @@ export const LoginForm: React.FC = () => {
                 required
                 maxLength={6}
                 placeholder="000000"
-                className="w-full text-center text-lg tracking-widest font-mono"
+                className="w-full h-12 text-center text-lg tracking-widest font-mono border-slate-200 focus:border-primary focus:ring-primary/20 rounded-lg"
               />
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-slate-500">
                 Check your email for the 6-digit verification code
               </p>
             </div>
@@ -145,18 +191,18 @@ export const LoginForm: React.FC = () => {
                 type="button"
                 variant="outline"
                 onClick={() => setStep('email')}
-                className="flex-1"
+                className="flex-1 h-12 border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg font-semibold"
               >
                 Back
               </Button>
               <Button
                 type="submit"
                 disabled={isLoading || otp.length !== 6}
-                className="flex-1"
+                className="flex-1 h-12 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isLoading ? (
                   <div className="flex items-center">
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                    <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent mr-2"></div>
                     Verifying...
                   </div>
                 ) : (

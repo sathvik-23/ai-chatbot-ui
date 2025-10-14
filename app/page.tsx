@@ -41,8 +41,9 @@ export default function Home() {
           <div className="flex flex-col h-screen">
             <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
               <div className="flex h-14 items-center justify-between px-4">
-                <div className="flex items-center space-x-2">
-                  <h1 className="text-lg font-semibold">Lucy Assistant</h1>
+                <div className="flex items-center space-x-3">
+
+                  <h1 className="text-lg font-semibold">Agent Lucy</h1>
                 </div>
               </div>
             </header>
