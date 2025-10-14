@@ -3,7 +3,6 @@
 import { Chat } from '@/components/chat'
 import { DataStreamHandler } from '@/components/data-stream-handler'
 import { DataStreamProvider } from '@/components/data-stream-provider'
-import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar'
 import { DEFAULT_CHAT_MODEL } from '@/lib/ai/models'
 import { generateUUID } from '@/lib/utils'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
@@ -31,32 +30,28 @@ export default function Home() {
 
   return (
     <DataStreamProvider>
-      <SidebarProvider>
-        <div className="flex flex-col h-screen">
-          <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="flex h-14 items-center justify-between px-4">
-              <div className="flex items-center space-x-2">
-                <h1 className="text-lg font-semibold">Lucy Assistant</h1>
-              </div>
-              <UserProfileNav />
+      <div className="flex flex-col h-screen w-full">
+        <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+          <div className="flex h-14 items-center justify-between px-4">
+            <div className="flex items-center space-x-2">
+              <h1 className="text-lg font-semibold">Lucy Assistant</h1>
             </div>
-          </header>
-          <SidebarInset className="flex-1">
-            <div className="flex flex-col h-full">
-              <Chat
-                autoResume={false}
-                id={id}
-                initialChatModel={DEFAULT_CHAT_MODEL}
-                initialMessages={[]}
-                initialVisibilityType="private"
-                isReadonly={false}
-                key={id}
-              />
-              <DataStreamHandler />
-            </div>
-          </SidebarInset>
+            <UserProfileNav />
+          </div>
+        </header>
+        <div className="flex-1 w-full">
+          <Chat
+            autoResume={false}
+            id={id}
+            initialChatModel={DEFAULT_CHAT_MODEL}
+            initialMessages={[]}
+            initialVisibilityType="private"
+            isReadonly={false}
+            key={id}
+          />
+          <DataStreamHandler />
         </div>
-      </SidebarProvider>
+      </div>
     </DataStreamProvider>
   )
 }
