@@ -1,0 +1,9 @@
+[
+  { "idx": 0, "unit_no": "EA", "description": "EACH" },
+  { "idx": 1, "unit_no": "FT", "description": "Feet" },
+  { "idx": 2, "unit_no": "HRS", "description": "Hours" },
+  { "idx": 3, "unit_no": "LB", "description": "Pounds" },
+  { "idx": 4, "unit_no": "LOT", "description": "LOT" },
+  { "idx": 5, "unit_no": "OT", "description": "Overtime wages" },
+  { "idx": 6, "unit_no": "REG", "description": "Regular Wages" }
+]

@@ -1,0 +1,233 @@
+[
+  {
+    "idx": 0,
+    "cost_code_no": "1",
+    "description": "GENERAL COSTS",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 1,
+    "cost_code_no": "100",
+    "description": "PROJECT MANAGEMENT",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 2,
+    "cost_code_no": "101",
+    "description": "BONUS",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 3,
+    "cost_code_no": "110",
+    "description": "PERMITS",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 4,
+    "cost_code_no": "120",
+    "description": "BONDS",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 5,
+    "cost_code_no": "130",
+    "description": "ENGINEERING",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 6,
+    "cost_code_no": "200",
+    "description": "PLUMBING DEMO",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 7,
+    "cost_code_no": "210",
+    "description": "UNDERGROUND PLUMBING",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 8,
+    "cost_code_no": "220",
+    "description": "ROUGH PLUMBING",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 9,
+    "cost_code_no": "230",
+    "description": "PLUMBING FINISH",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 10,
+    "cost_code_no": "300",
+    "description": "MECHANICAL DEMO",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 11,
+    "cost_code_no": "310",
+    "description": "MECH EQUIPMENT",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 12,
+    "cost_code_no": "320",
+    "description": "MECHANICAL PIPING",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 13,
+    "cost_code_no": "325",
+    "description": "MED GAS PIPING",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 14,
+    "cost_code_no": "330",
+    "description": "MECHANICAL GAS PIPING",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 15,
+    "cost_code_no": "400",
+    "description": "HVAC DEMO",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 16,
+    "cost_code_no": "410",
+    "description": "HVAC EQUIPMENT",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 17,
+    "cost_code_no": "420",
+    "description": "HVAC SHEET METAL",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 18,
+    "cost_code_no": "421",
+    "description": "HVAC SHEET METAL IN SHOP",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 19,
+    "cost_code_no": "430",
+    "description": "HVAC SPIRAL",
+    "unit_of_measure": "LOT",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 20,
+    "cost_code_no": "440",
+    "description": "HVAC GRDS FANS",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 21,
+    "cost_code_no": "510",
+    "description": "SUBCONTRACT INSULATION",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 22,
+    "cost_code_no": "520",
+    "description": "SUBS CONTROLS",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 23,
+    "cost_code_no": "530",
+    "description": "SUBS BALANCE",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 24,
+    "cost_code_no": "540",
+    "description": "SUBS ELECRTRICAL",
+    "unit_of_measure": "LOT",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 25,
+    "cost_code_no": "550",
+    "description": "SUBS MED GAS",
+    "unit_of_measure": "LOT",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 26,
+    "cost_code_no": "560",
+    "description": "SUBS Roofing",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 27,
+    "cost_code_no": "570",
+    "description": "SUBS SHEET METAL",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 28,
+    "cost_code_no": "600",
+    "description": "SERVICE HVAC",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 29,
+    "cost_code_no": "610",
+    "description": "SERVICE PLUMBING",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 30,
+    "cost_code_no": "700",
+    "description": "CONTROLS",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 31,
+    "cost_code_no": "710",
+    "description": "EXTRAS",
+    "unit_of_measure": "EA",
+    "cost_class_no": ""
+  },
+  {
+    "idx": 32,
+    "cost_code_no": "CONTROLS",
+    "description": "CONTROLS NORTHLAND",
+    "unit_of_measure": "",
+    "cost_class_no": ""
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "idx": 0,
+    "cost_class_no": "0",
+    "description": "QUANTITY",
+    "short_desc": "QTY"
+  },
+  {
+    "idx": 1,
+    "cost_class_no": "1",
+    "description": "LABOR",
+    "short_desc": "LAB"
+  },
+  {
+    "idx": 2,
+    "cost_class_no": "2",
+    "description": "MATERIALS",
+    "short_desc": "MAT"
+  },
+  {
+    "idx": 3,
+    "cost_class_no": "3",
+    "description": "SUBCONTRACTORS",
+    "short_desc": "SUB"
+  },
+  {
+    "idx": 4,
+    "cost_class_no": "4",
+    "description": "OWNED EQUIPMENT",
+    "short_desc": "OEQ"
+  },
+  {
+    "idx": 5,
+    "cost_class_no": "5",
+    "description": "RENTED EQUIPMENT",
+    "short_desc": "REQ"
+  },
+  {
+    "idx": 6,
+    "cost_class_no": "6",
+    "description": "BURDEN",
+    "short_desc": "BUR"
+  },
+  {
+    "idx": 7,
+    "cost_class_no": "7",
+    "description": "OTHER",
+    "short_desc": "OTH"
+  }
+]
