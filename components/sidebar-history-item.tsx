@@ -8,7 +8,6 @@ import {
   LockIcon,
   MoreHorizontalIcon,
   ShareIcon,
-  TrashIcon,
 } from "./icons";
 import {
   DropdownMenu,
@@ -29,12 +28,10 @@ import {
 const PureChatItem = ({
   chat,
   isActive,
-  onDelete,
   setOpenMobile,
 }: {
   chat: Chat;
   isActive: boolean;
-  onDelete: (chatId: string) => void;
   setOpenMobile: (open: boolean) => void;
 }) => {
   const { visibilityType, setVisibilityType } = useChatVisibility({
@@ -99,13 +96,6 @@ const PureChatItem = ({
             </DropdownMenuPortal>
           </DropdownMenuSub>
 
-          <DropdownMenuItem
-            className="cursor-pointer text-destructive focus:bg-destructive/15 focus:text-destructive dark:text-red-500"
-            onSelect={() => onDelete(chat.id)}
-          >
-            <TrashIcon />
-            <span>Delete</span>
-          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </SidebarMenuItem>
