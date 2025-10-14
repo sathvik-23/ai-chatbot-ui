@@ -16,7 +16,6 @@ import {
 import type { ModelCatalog } from "tokenlens/core";
 import { fetchModels } from "tokenlens/fetch";
 import { getUsage } from "tokenlens/helpers";
-import { auth, type UserType } from "@/app/(auth)/auth";
 import type { VisibilityType } from "@/components/visibility-selector";
 import { entitlementsByUserType } from "@/lib/ai/entitlements";
 import type { ChatModel } from "@/lib/ai/models";
@@ -31,7 +30,6 @@ import {
   createStreamId,
   deleteChatById,
   getChatById,
-  getMessageCountByUserId,
   getMessagesByChatId,
   saveChat,
   saveMessages,
@@ -107,37 +105,16 @@ export async function POST(request: Request) {
       selectedVisibilityType: VisibilityType;
     } = requestBody;
 
-    const session = await auth();
-
-    if (!session?.user) {
-      return new ChatSDKError("unauthorized:chat").toResponse();
-    }
-
-    const userType: UserType = session.user.type;
-
-    const messageCount = await getMessageCountByUserId({
-      id: session.user.id,
-      differenceInHours: 24,
-    });
-
-    if (messageCount > entitlementsByUserType[userType].maxMessagesPerDay) {
-      return new ChatSDKError("rate_limit:chat").toResponse();
-    }
 
     const chat = await getChatById({ id });
 
-    if (chat) {
-      if (chat.userId !== session.user.id) {
-        return new ChatSDKError("forbidden:chat").toResponse();
-      }
-    } else {
+    if (!chat) {
       const title = await generateTitleFromUserMessage({
         message,
       });
 
       await saveChat({
         id,
-        userId: session.user.id,
         title,
         visibility: selectedVisibilityType,
       });
@@ -192,10 +169,9 @@ export async function POST(request: Request) {
           experimental_transform: smoothStream({ chunking: "word" }),
           tools: {
             getWeather,
-            createDocument: createDocument({ session, dataStream }),
-            updateDocument: updateDocument({ session, dataStream }),
+            createDocument: createDocument({ dataStream }),
+            updateDocument: updateDocument({ dataStream }),
             requestSuggestions: requestSuggestions({
-              session,
               dataStream,
             }),
           },
@@ -313,18 +289,6 @@ export async function DELETE(request: Request) {
 
   if (!id) {
     return new ChatSDKError("bad_request:api").toResponse();
-  }
-
-  const session = await auth();
-
-  if (!session?.user) {
-    return new ChatSDKError("unauthorized:chat").toResponse();
-  }
-
-  const chat = await getChatById({ id });
-
-  if (chat?.userId !== session.user.id) {
-    return new ChatSDKError("forbidden:chat").toResponse();
   }
 
   const deletedChat = await deleteChatById({ id });
